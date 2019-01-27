@@ -27,12 +27,11 @@ Then, add the dependency to your module:
 
 ```
 dependencies {
-    compile 'com.github.AllanHasegawa.Tomo:tomo:x.y.z'
+    compile 'com.github.AllanHasegawa:Tomo:x.y.z'
 }
 ```
 
-Latest release: [![Release](https://jitpack.io/v/AllanHasegawa/Tomo.svg)]
-(https://jitpack.io/#AllanHasegawa/Tomo)
+Latest release: [![Release](https://jitpack.io/v/AllanHasegawa/Tomo.svg)](https://jitpack.io/#AllanHasegawa/Tomo)
 
 Initialize the library in your `Application` class:
 
