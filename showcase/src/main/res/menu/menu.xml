@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuForkMe"
+        android:title="@string/menu_fork_me"
+        app:actionLayout="@layout/layout_fork_me_action"
+        app:showAsAction="always" />
+</menu>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Tomo Showchase</string>
+
+    <string name="menu_fork_me">Fork Me!</string>
+
+    <string name="splash_title">TO\nMO</string>
+
+    <string name="main_greetings">Hi!</string>
+    <string name="main_message">We have some amazing movies for your!️</string>
+
+    <string name="details_genre_label">Genre</string>
+    <string name="details_release_date_label">Release Date</string>
+
+</resources>
