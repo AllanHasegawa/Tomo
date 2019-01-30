@@ -3,6 +3,8 @@
 Tomo is a collection of fast image processing effects for Android.
 Its main goal is to generate dynamic content for aesthetically pleasing apps.
 
+The motivation behind this project can be read in [this blog post](https://medium.com/android-frontier/tomo-a-new-image-processing-library-for-android-344c59c9ee27).
+
 ## Showcase
 
 In this demo app we showcase a cool adaptive background being generated using
