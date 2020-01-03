@@ -1,6 +1,8 @@
 import java.net.URI
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id("com.github.ben-manes.versions") version "0.27.0"
+}
 
 buildscript {
     repositories {
@@ -8,7 +10,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:3.3.0")
+        classpath("com.android.tools.build:gradle:3.5.3")
         classpath(kotlin("gradle-plugin", version = Versions.kotlin))
         classpath("com.github.dcendents:android-maven-gradle-plugin:2.1")
 

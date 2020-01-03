@@ -1,8 +1,8 @@
 object Versioning {
     private val semantic = Semantic(
-        major = 0,
+        major = 1,
         minor = 0,
-        patch = 1
+        patch = 0
     )
 
     val version = semantic.toVersion()

@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.internal.AndroidExtensionsExtension
 import java.util.*
 
 plugins {
@@ -59,9 +58,12 @@ android {
     // IMPORTANT!  Enables view caching in viewholders.
     // See: https://github.com/Kotlin/KEEP/blob/master/proposals/android-extensions-entity-caching.md
     androidExtensions {
-        configure(delegateClosureOf<AndroidExtensionsExtension> {
-            isExperimental = true
-        })
+        isExperimental = true
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
 

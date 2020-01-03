@@ -8,20 +8,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xwray.groupie.GroupAdapter
-import com.xwray.groupie.kotlinandroidextensions.ViewHolder
+import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import jp.wasabeef.recyclerview.animators.LandingAnimator
 import kotlinx.android.synthetic.main.activity_main.*
 import tomo.Tomo
-import tomo.showcase.data.MovieId
 import tomo.showcase.R
 import tomo.showcase.app
 import tomo.showcase.common.handleCommonMenuClick
 import tomo.showcase.common.inflateCommonMenu
-import tomo.showcase.detailsScreen.DetailsActivity
 import tomo.showcase.common.post
+import tomo.showcase.data.MovieId
+import tomo.showcase.detailsScreen.DetailsActivity
 
 class MainActivity : AppCompatActivity() {
-    private val adapter = GroupAdapter<ViewHolder>()
+    private val adapter = GroupAdapter<GroupieViewHolder>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

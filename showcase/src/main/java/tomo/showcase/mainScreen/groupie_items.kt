@@ -7,8 +7,8 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
+import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
-import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.item_hi.*
 import kotlinx.android.synthetic.main.item_poster.*
 import tomo.showcase.R
@@ -19,7 +19,7 @@ import tomo.showcase.data.MovieId
 import kotlin.math.roundToInt
 
 class HiItem : Item(0) {
-    override fun bind(viewHolder: ViewHolder, position: Int) {
+    override fun bind(viewHolder: GroupieViewHolder, position: Int) {
         with(viewHolder) {
             hiPopcornView.scaleViewUp()
                 .setStartDelay(2_000L)
@@ -53,7 +53,7 @@ class PosterItem(private val movie: Movie, private val onClick: (MovieId, View) 
         private const val MAX_GENRE_ICONS = 5
     }
 
-    override fun bind(viewHolder: ViewHolder, position: Int) = with(viewHolder) {
+    override fun bind(viewHolder: GroupieViewHolder, position: Int) = with(viewHolder) {
         posterCard.setOnClickListener { onClick(movie.movieId, posterIv) }
 
         posterTitleTv.text = movie.title.value
@@ -70,7 +70,7 @@ class PosterItem(private val movie: Movie, private val onClick: (MovieId, View) 
         revealInfoWithAnimation()
     }
 
-    override fun unbind(holder: ViewHolder) {
+    override fun unbind(holder: GroupieViewHolder) {
         super.unbind(holder)
         holder.posterBackground.clearAnimation()
     }
@@ -81,7 +81,7 @@ class PosterItem(private val movie: Movie, private val onClick: (MovieId, View) 
             .fetch()
     }
 
-    private fun ViewHolder.revealInfoWithAnimation() {
+    private fun GroupieViewHolder.revealInfoWithAnimation() {
         posterBackground.post {
             posterBackground.translationX = -(posterBackground.width).toFloat()
 
@@ -93,7 +93,7 @@ class PosterItem(private val movie: Movie, private val onClick: (MovieId, View) 
         }
     }
 
-    private fun ViewHolder.renderPoster() {
+    private fun GroupieViewHolder.renderPoster() {
         val screenWidthPx = itemView.windowSize().x
         val posterWidthPx = screenWidthPx * POSTER_WIDTH_PERCENT
         val posterHeightPx = posterWidthPx / POSTER_ASPECT_RATIO
@@ -110,7 +110,7 @@ class PosterItem(private val movie: Movie, private val onClick: (MovieId, View) 
             .into(posterIv)
     }
 
-    private fun ViewHolder.renderGenreIcons(inflater: LayoutInflater): LayoutInflater {
+    private fun GroupieViewHolder.renderGenreIcons(inflater: LayoutInflater): LayoutInflater {
         posterGenreLl.removeAllViews()
         movie.genres.map(::genreToDrawableId).take(MAX_GENRE_ICONS).forEach { drawableId ->
             val view = inflater.inflate(R.layout.layout_poster_genre_icon, posterGenreLl, false)
@@ -123,7 +123,7 @@ class PosterItem(private val movie: Movie, private val onClick: (MovieId, View) 
         return inflater
     }
 
-    private fun ViewHolder.renderScore(
+    private fun GroupieViewHolder.renderScore(
         inflater: LayoutInflater,
         numberOfFullStars: Int,
         showAHalfStar: Boolean
@@ -147,7 +147,7 @@ class PosterItem(private val movie: Movie, private val onClick: (MovieId, View) 
 
     override fun getLayout(): Int = R.layout.item_poster
 
-    override fun isSameAs(other: com.xwray.groupie.Item<*>?): Boolean =
+    override fun isSameAs(other: com.xwray.groupie.Item<*>): Boolean =
         (other as? PosterItem)?.movie?.movieId == movie.movieId
 
     override fun equals(other: Any?): Boolean = isSameAs(other as com.xwray.groupie.Item<*>)
@@ -156,7 +156,7 @@ class PosterItem(private val movie: Movie, private val onClick: (MovieId, View) 
 }
 
 class SpaceItem : Item(1) {
-    override fun bind(viewHolder: ViewHolder, position: Int) = Unit
+    override fun bind(viewHolder: GroupieViewHolder, position: Int) = Unit
     override fun getLayout(): Int = R.layout.item_space
 }
 

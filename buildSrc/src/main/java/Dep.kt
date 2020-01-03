@@ -25,19 +25,19 @@ object Dep {
 object Versions {
     // Kotlin
 
-    const val kotlin = "1.3.20"
+    const val kotlin = "1.3.61"
     const val junit = "4.12"
-    const val retrofit = "2.5.0"
+    const val retrofit = "2.7.1"
 
     // Android
 
-    const val appCompat = "1.0.2"
-    const val material = "1.0.0"
+    const val appCompat = "1.2.0-alpha01"
+    const val material = "1.2.0-alpha03"
     const val testRunner = "1.1.1"
     const val espresso = "3.1.1"
-    const val constraintLayout = "2.0.0-alpha3"
+    const val constraintLayout = "2.0.0-beta4"
     const val picasso = "2.71828"
-    const val groupie = "2.3.0"
+    const val groupie = "2.7.2"
     const val rebound = "0.3.8"
     const val rvAnimators = "3.0.0"
 }
