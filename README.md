@@ -5,6 +5,12 @@ Its main goal is to generate dynamic content for aesthetically pleasing apps.
 
 The motivation behind this project can be read in [this blog post](https://medium.com/android-frontier/tomo-a-new-image-processing-library-for-android-344c59c9ee27).
 
+## Deprecation notice
+
+Tomo is built on top of [RenderScript](https://developer.android.com/guide/topics/renderscript/compute) (RS). Google is deprecating RS starting with Android 12. Given that, I don't recommend using Tomo on new projects.
+
+Let me know if you would like to see Tomo for [Vulkan](https://www.vulkan.org/) and Compose though.
+
 ## Showcase
 
 In this demo app we showcase a cool adaptive background being generated using
